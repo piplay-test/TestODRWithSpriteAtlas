@@ -1,0 +1,38 @@
+{
+  "images" : [
+    {
+      "filename" : "CF1H01.png",
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "CF1H01@2x.png",
+      "idiom" : "iphone",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "CF1H01@3x.png",
+      "idiom" : "iphone",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "CF1H01P-1.png",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "CF1H01P@2x-1.png",
+      "idiom" : "ipad",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "on-demand-resource-tags" : [
+      "test"
+    ]
+  }
+}
