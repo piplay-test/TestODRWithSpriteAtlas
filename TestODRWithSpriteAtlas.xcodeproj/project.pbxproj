@@ -13,6 +13,8 @@
 		CC7C607228C1B4E900D05DBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7C607028C1B4E900D05DBF /* LaunchScreen.storyboard */; };
 		CC7C607528C1B4E900D05DBF /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7C606028C1B4E300D05DBF /* GameScene.swift */; };
 		CC7C607628C1B4E900D05DBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC7C606128C1B4E900D05DBF /* Assets.xcassets */; };
+		CC8D66E72B9F31C500F0D7EC /* Sprites-C.atlas in Resources */ = {isa = PBXBuildFile; fileRef = CC8D66E52B9F31C500F0D7EC /* Sprites-C.atlas */; settings = {ASSET_TAGS = (test, ); }; };
+		CC8D66E82B9F31C500F0D7EC /* Sprites-D.atlas in Resources */ = {isa = PBXBuildFile; fileRef = CC8D66E62B9F31C500F0D7EC /* Sprites-D.atlas */; settings = {ASSET_TAGS = (test, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CC7C606B28C1B4E900D05DBF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		CC7C606E28C1B4E900D05DBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC7C607128C1B4E900D05DBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CC8D66E52B9F31C500F0D7EC /* Sprites-C.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "Sprites-C.atlas"; sourceTree = "<group>"; };
+		CC8D66E62B9F31C500F0D7EC /* Sprites-D.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "Sprites-D.atlas"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 		CC7C605D28C1B4E300D05DBF /* TestODRWithSpriteAtlas Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CC8D66E52B9F31C500F0D7EC /* Sprites-C.atlas */,
+				CC8D66E62B9F31C500F0D7EC /* Sprites-D.atlas */,
 				CC7C606028C1B4E300D05DBF /* GameScene.swift */,
 				CC7C606128C1B4E900D05DBF /* Assets.xcassets */,
 			);
@@ -106,7 +112,7 @@
 					test,
 				);
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					CC7C606528C1B4E900D05DBF = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -136,9 +142,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC8D66E72B9F31C500F0D7EC /* Sprites-C.atlas in Resources */,
 				CC7C606F28C1B4E900D05DBF /* Main.storyboard in Resources */,
 				CC7C607228C1B4E900D05DBF /* LaunchScreen.storyboard in Resources */,
 				CC7C607628C1B4E900D05DBF /* Assets.xcassets in Resources */,
+				CC8D66E82B9F31C500F0D7EC /* Sprites-D.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,9 +219,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -270,9 +280,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -301,8 +313,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -332,8 +344,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
