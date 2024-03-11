@@ -12,12 +12,17 @@ let FONT_SIZE = 12.0
 let LABEL_Y_OFFSET = UIDevice.current.userInterfaceIdiom == .phone ? 70.0 : 80.0
 let X_DISTANCE = UIDevice.current.userInterfaceIdiom == .phone ? 100.0 : 200.0
 let Y_DISTANCE = 200.0
+let FRACTION_COMPLETED = "fractionCompleted"
 
 class GameScene: SKScene {
     
     var resourceRequest: NSBundleResourceRequest?
+    private let progressObservingContext: UnsafeMutableRawPointer? = nil
+    let progressLabel = SKLabelNode(text: "0.00%")
     
     func setUpScene() {
+        self.progressLabel.fontName = FONT_NAME
+        self.addChild(progressLabel)
         self.resourceRequest = NSBundleResourceRequest(tags: ["test"])
         self.resourceRequest?.conditionallyBeginAccessingResources(completionHandler: { available in
             if available {
@@ -25,16 +30,30 @@ class GameScene: SKScene {
             } else {
                 self.resourceRequest?.beginAccessingResources(completionHandler: { error in
                     if error != nil {
+                        self.progressLabel.text = error!.localizedDescription
                         NSLog(error!.localizedDescription)
                     } else {
                         self.setUpNodes()
                     }
                 })
+                self.resourceRequest?.progress.addObserver(self, forKeyPath: FRACTION_COMPLETED, context: self.progressObservingContext)
             }
         })
     }
     
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if context == progressObservingContext && keyPath == FRACTION_COMPLETED {
+            let progress = object as! Progress
+            self.progressLabel.text = String(format: "%.2f%%", progress.fractionCompleted * 100.0)
+            if progress.isFinished {
+                progress.removeObserver(self, forKeyPath: FRACTION_COMPLETED, context: self.progressObservingContext)
+            }
+        }
+    }
+    
     func setUpNodes() {
+        self.progressLabel.removeFromParent()
+        
         // ODR/Assets/SpriteAtlas/PDF
         let atlasA = SKTextureAtlas(named: "Sprites-A")
         let texA = atlasA.textureNamed("PdfSprite")
